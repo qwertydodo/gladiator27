@@ -1,9 +1,9 @@
 import React from 'react';
 import './VideoSection.scss';
-import * as classnames from "classnames";
+import {SectionItem} from "../../SectionItem";
 
 export const VideoSection = props => {
-  return <div className={classnames('VideoSection')}>
+  return <SectionItem className="VideoSection">
     Video Section
-  </div>;
+  </SectionItem>;
 };

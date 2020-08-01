@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
-import {Loader} from "./components/Loader";
+import {Loader} from "./components/loader/Loader";
 import {initApp} from "./appHelpers";
+import {SectionsList} from "./components/sections/SectionsList";
 
 function App() {
   const [isLoaderHide, setIsLoaderHide] = useState(false);
@@ -13,6 +14,8 @@ function App() {
   return (
     <div className="App">
       <Loader isHide={isLoaderHide} />
+
+      <SectionsList />
     </div>
   );
 }

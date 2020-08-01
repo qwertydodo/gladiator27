@@ -1,9 +1,9 @@
 import React from 'react';
 import './CardSection.scss';
-import * as classnames from "classnames";
+import {SectionItem} from "../../SectionItem";
 
 export const CardSection = props => {
-  return <div className={classnames('CardSection')}>
+  return <SectionItem className="CardSection">
     Card Section
-  </div>;
+  </SectionItem>;
 };
