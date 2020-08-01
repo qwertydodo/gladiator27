@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
 import {Loader} from "./components/Loader";
-import {initApp} from "./helpers/initHelpers";
+import {initApp} from "./appHelpers";
 
 function App() {
   const [isLoaderHide, setIsLoaderHide] = useState(false);
