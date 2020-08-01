@@ -2,12 +2,9 @@ const axios = require('axios').default;
 
 const GIFFY_TOKEN = process.env.GIFFY_TOKEN;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const TELEGRAM_CHAT_ID = parseInt(process.env.TELEGRAM_CHAT_ID);
 
 const NEW_VERSION_MESSAGE = 'Новая версия Гладиатора загружена!';
-
-console.log('!!!!!!!!!!!!!!!!process.env', process.env);
-
 
 async function getGifUrl() {
   try {
