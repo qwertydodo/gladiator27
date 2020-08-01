@@ -6,6 +6,9 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 const NEW_VERSION_MESSAGE = 'Новая версия Гладиатора загружена!';
 
+console.log('!!!!!!!!!!!!!!!!process.env', process.env);
+
+
 async function getGifUrl() {
   try {
     const res = await axios.get('http://api.giphy.com/v1/gifs/random', {
