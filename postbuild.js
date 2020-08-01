@@ -1,6 +1,6 @@
 const axios = require('axios').default;
 
-const CHAT_ID = process.env.CHAT_ID;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const GIFFY_TOKEN = process.env.GIFFY_TOKEN;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
@@ -27,7 +27,7 @@ async function getGifUrl() {
 async function sendBotMessage(text) {
   try {
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      chat_id: CHAT_ID,
+      chat_id: TELEGRAM_CHAT_ID,
       text: text,
     });
   } catch (e){
