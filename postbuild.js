@@ -4,7 +4,7 @@ const GIFFY_TOKEN = process.env.GIFFY_TOKEN;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = parseInt(process.env.TELEGRAM_CHAT_ID);
 
-const NEW_VERSION_MESSAGE = 'Новая версия Гладиатора загружена!';
+const NEW_VERSION_MESSAGE = 'Новая Версия Гладиатора Загружена! https://gladiator27.herokuapp.com/';
 
 async function getGifUrl() {
   try {
