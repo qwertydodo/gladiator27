@@ -1,25 +1,31 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import './VideoSlider.scss';
 import {VideoPlayer} from "./VideoPlayer";
 import {VIDEO_URLS} from "./constants/videoUrls";
 import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+
+const AutoplayAwesomeSliderSlider = withAutoplay(AwesomeSlider);
+
+const SLIDES_URLS = Object.values(VIDEO_URLS);
 
 export const VideoSlider = props => {
-    return <AwesomeSlider className="VideoSlider" infinite bullets={false}>
-      <div>
-        <VideoPlayer url={VIDEO_URLS.pavel} />
-      </div>
+    const [play, setIsPlay] = useState(true);
 
-      <div>
-        <VideoPlayer url={VIDEO_URLS.igor} />
-      </div>
+    const onPlay = useCallback(() => setIsPlay(false), []);
 
-      <div>
-        <VideoPlayer url={VIDEO_URLS.alexander} />
-      </div>
-
-      <div>
-        <VideoPlayer url={VIDEO_URLS.yaroslav} />
-      </div>
-    </AwesomeSlider>
+    return <AutoplayAwesomeSliderSlider
+      className="VideoSlider"
+      infinite
+      bullets={false}
+      cancelOnInteraction={false}
+      interval={5000}
+      play={play}
+    >
+      {SLIDES_URLS.map(url =>
+        <div className="VideoSlider__slide" key={url}>
+          <VideoPlayer url={url} onPlay={onPlay}/>
+        </div>
+      )}
+    </AutoplayAwesomeSliderSlider>
 };

@@ -4,11 +4,16 @@
   --organic-arrow-color: red;
   --organic-arrow-thickness: 20px;
   --organic-arrow-height: 80px;
+  --timer-background-color: red;
 
   height: 80vh;
 
-  .awssld__content > * {
+  &__slide {
     height: 100%;
     width: 100%;
+  }
+
+  .awssld__timer {
+    background-color: red;
   }
 }

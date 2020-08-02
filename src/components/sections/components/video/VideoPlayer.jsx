@@ -9,5 +9,6 @@ export const VideoPlayer = props => {
     controls
     width='100%'
     height='100%'
+    onPlay={props.onPlay}
   />;
 };
