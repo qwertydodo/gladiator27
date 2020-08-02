@@ -5,7 +5,7 @@ import {initApp} from "./appHelpers";
 import {SectionsList} from "./components/sections/SectionsList";
 
 function App() {
-  const [isLoaderHide, setIsLoaderHide] = useState(false);
+  const [isLoaderHide, setIsLoaderHide] = useState(true);
 
   useEffect(() => {
     initApp().then(() => setIsLoaderHide(true));

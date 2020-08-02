@@ -1,3 +1,8 @@
 .VideoSection {
   background-color: chartreuse;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+  }
 }

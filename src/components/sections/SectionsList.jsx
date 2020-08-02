@@ -1,4 +1,5 @@
 import React from 'react';
+import './SectionsList.scss';
 import ReactFullpage from '@fullpage/react-fullpage';
 import {DanceSection} from "./components/dance/DanceSection";
 import {VideoSection} from "./components/video/VideoSection";
