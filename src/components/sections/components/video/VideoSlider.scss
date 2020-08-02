@@ -1,5 +1,14 @@
+@import "../../../../../node_modules/react-awesome-slider/dist/styles.css";
+
 .VideoSlider {
-  .BrainhubCarousel__track {
-    height: 80vh;
+  --organic-arrow-color: red;
+  --organic-arrow-thickness: 20px;
+  --organic-arrow-height: 80px;
+
+  height: 80vh;
+
+  .awssld__content > * {
+    height: 100%;
+    width: 100%;
   }
 }
