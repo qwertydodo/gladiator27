@@ -3,20 +3,27 @@ import './App.scss';
 import {Loader} from "./components/loader/Loader";
 import {initApp} from "./appHelpers";
 import {SectionsList} from "./components/sections/SectionsList";
+import {AppContext, appContextDefaultValue} from './AppContext';
 
 function App() {
-  const [isLoaderHide, setIsLoaderHide] = useState(true);
+  const [isInit, setIsInit] = useState(false);
+  const [contextValue, setContextValue] = useState(appContextDefaultValue);
 
   useEffect(() => {
-    initApp().then(() => setIsLoaderHide(true));
+    initApp().then((data) => {
+      setContextValue(data);
+      setIsInit(true);
+    });
   }, []);
 
   return (
-    <div className="App">
-      <Loader isHide={isLoaderHide} />
+    <AppContext.Provider value={contextValue}>
+      <div className="App">
+        <Loader isHide={isInit} />
 
-      <SectionsList />
-    </div>
+        <SectionsList />
+      </div>
+    </AppContext.Provider>
   );
 }
 
