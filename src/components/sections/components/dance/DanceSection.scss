@@ -1,3 +1,17 @@
 .DanceSection {
   background-color: blueviolet;
+
+  &__dances {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__run {
+    display: flex;
+    justify-content: center;
+  }
+
+  .DanceVideoItem, .DanceSection img {
+    width: 200px;
+  }
 }
