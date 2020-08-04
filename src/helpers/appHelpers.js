@@ -6,13 +6,11 @@ import {loadImages} from "./imageHelpers";
 const loaderStab = new Promise(resolve => {
     setTimeout(() => {
         resolve();
-    }, 2000);
+    }, 5000);
 });
 
 const loadAppImages = () => {
-  const srcs = Object.values(DANCE_IMAGES_URLS);
-
-  return loadImages(srcs);
+  return loadImages([...Object.values(DANCE_IMAGES_URLS)]);
 };
 
 const loadDanceSong = () => {
