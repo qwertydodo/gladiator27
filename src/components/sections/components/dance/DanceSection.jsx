@@ -2,11 +2,8 @@ import React, {useCallback, useContext, useState} from 'react';
 import './DanceSection.scss';
 import {SectionItem} from "../../SectionItem";
 import {AppContext} from "../../../../AppContext";
-import pavelDance from '../../../../static/dance/pavel.gif';
-import igorDance from '../../../../static/dance/igor.gif';
-import yaroslavDance from '../../../../static/dance/yaroslav.gif';
-import alexanderDance from '../../../../static/dance/alexander.gif';
 import {DanceVideoItem} from "./DanceVideoItem";
+import {DANCE_IMAGES_URLS} from "../../../../constants/imagesUrls";
 
 export const DanceSection = props => {
   const { danceSong } = useContext(AppContext);
@@ -19,9 +16,9 @@ export const DanceSection = props => {
 
   return <SectionItem className="DanceSection">
     <div className="DanceSection__dances">
-      <DanceVideoItem src={pavelDance} isPlaying={isPlaying}/>
+      <DanceVideoItem src={DANCE_IMAGES_URLS.pavel} isPlaying={isPlaying}/>
 
-      <DanceVideoItem src={igorDance} isPlaying={isPlaying}/>
+      <DanceVideoItem src={DANCE_IMAGES_URLS.igor} isPlaying={isPlaying}/>
     </div>
 
     <div className="DanceSection__run">
@@ -29,9 +26,9 @@ export const DanceSection = props => {
     </div>
 
     <div className="DanceSection__dances">
-      <DanceVideoItem src={alexanderDance} isPlaying={isPlaying}/>
+      <DanceVideoItem src={DANCE_IMAGES_URLS.alexander} isPlaying={isPlaying}/>
 
-      <DanceVideoItem src={yaroslavDance} isPlaying={isPlaying}/>
+      <DanceVideoItem src={DANCE_IMAGES_URLS.yaroslav} isPlaying={isPlaying}/>
     </div>
   </SectionItem>
 };

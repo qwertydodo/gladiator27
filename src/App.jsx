@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
 import {Loader} from "./components/loader/Loader";
-import {initApp} from "./appHelpers";
+import {initApp} from "./helpers/appHelpers";
 import {SectionsList} from "./components/sections/SectionsList";
 import {AppContext, appContextDefaultValue} from './AppContext';
 
