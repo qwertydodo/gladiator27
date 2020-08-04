@@ -22,7 +22,7 @@ export const DanceSection = props => {
     </div>
 
     <div className="DanceSection__run">
-      <button type="button" onClick={onPartyRun}>Click me</button>
+      <button type="button" onClick={onPartyRun}>Нажми Меня Нежно</button>
     </div>
 
     <div className="DanceSection__dances">
