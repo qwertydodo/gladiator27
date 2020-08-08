@@ -1,3 +1,8 @@
+@import "../../../../styles/variables";
+
 .CardSection {
-  background-color: aquamarine;
+  background-color: $color-card-section;
+  background-image: url('../../../../static/card.png');
+  background-size: contain;
+  background-position: center center;
 }

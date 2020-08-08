@@ -1,6 +1,6 @@
 import danceSongFile from '../static/dance/real_dance_song.mp3'
 import * as Pizzicato from 'pizzicato'
-import {DANCE_IMAGES_URLS} from "../constants/imagesUrls";
+import {CARD_IMAGE_URL, DANCE_IMAGES_URLS} from "../constants/imagesUrls";
 import {loadImages} from "./imageHelpers";
 
 const loaderStab = new Promise(resolve => {
@@ -10,7 +10,7 @@ const loaderStab = new Promise(resolve => {
 });
 
 const loadAppImages = () => {
-  return loadImages([...Object.values(DANCE_IMAGES_URLS)]);
+  return loadImages([...Object.values(DANCE_IMAGES_URLS), CARD_IMAGE_URL]);
 };
 
 const loadDanceSong = () => {

@@ -7,3 +7,23 @@ $gutter-lg: $gutter-base * 2;
 $font-size-base: 16px;
 $font-size-md: $font-size-base;
 $font-size-xl: $font-size-base * 2;
+
+$color-1: black;
+
+$color-2: #dd99ff;
+$color-2-dark: darken($color-2, 20%);
+
+$color-3: #4cff00;
+$color-4: #ff21d6;
+$color-5: #4cfdff;
+
+$color-text: $color-1;
+
+$color-loader: $color-4;
+
+$color-dance-section: $color-5;
+
+$color-video-section: $color-2;
+$color-video-section--slider: $color-2-dark;
+
+$color-card-section: $color-3;

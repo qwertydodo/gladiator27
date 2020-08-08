@@ -1,7 +1,7 @@
 @import "../../../../styles/variables";
 
 .DanceSection {
-  background-color: blueviolet;
+  background-color: $color-dance-section;
 
   &__dances {
     display: flex;

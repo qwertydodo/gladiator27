@@ -1,5 +1,7 @@
+@import "../../../../styles/variables";
+
 .VideoSection {
-  background-color: chartreuse;
+  background-color: $color-video-section;
 
   &__title {
     display: flex;
