@@ -1,6 +1,6 @@
 export const VIDEO_URLS = {
-    pavel: 'https://www.youtube.com/watch?v=gvOWADwCDNg',
-    igor: 'https://www.youtube.com/watch?v=jhj63pWel2Q',
-    alexander: 'https://www.youtube.com/watch?v=ck9yB10Cy78',
-    yaroslav: 'https://www.youtube.com/watch?v=Ahhxk3uZE2g&t=8s',
+    pavel: 'https://youtu.be/Y2Hjm8KpHP4',
+    igor: 'https://youtu.be/zMgpOL2_uBg',
+    alexander: 'https://youtu.be/BJKJ0hppNEw',
+    yaroslav: 'https://youtu.be/eT7v8NiMxvM',
 };
