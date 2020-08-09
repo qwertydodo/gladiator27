@@ -5,13 +5,12 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0 $gutter-lg;
-
   &__title {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: $font-size-xl;
+    text-align: center;
   }
 
   &__title + &__content {

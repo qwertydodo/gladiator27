@@ -1,20 +1,99 @@
 @import "../../../../styles/variables";
+@import "../../../../styles/animations";
 
 .DanceSection {
-  background-color: $color-dance-section;
+  $root: &;
+  $appear-time: 2s;
+  $head-zoom-rhythm-time: 1s;
+  $disco-ball-rhythm-time: 5s;
 
-  &__dances {
-    display: flex;
-    justify-content: space-between;
-  }
+  position: relative;
 
   &__run {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+
     font-size: $font-size-xl;
   }
 
-  .DanceVideoItem, .DanceSection img {
-    width: 200px;
+  &__text {
+    font-size: $font-size-xl;
+    @include zoom($head-zoom-rhythm-time);
+  }
+
+  &__rowAdditional,
+  &__rowFriends,
+  &__rowMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__rowAdditional,
+  &__rowMain {
+    .DanceVideoItem, img {
+      width: 15vh;
+    }
+  }
+
+  &__rowFriends {
+    .DanceVideoItem, img {
+      width: 20vh;
+    }
+  }
+
+  &__rowMain {
+    opacity: 0;
+    transition: opacity $appear-time ease-in;
+
+    #{$root}__head {
+      width: 25vh;
+
+      @include zoom($head-zoom-rhythm-time);
+    }
+  }
+
+  &__top,
+  &__bottom {
+    width: 100%;
+    transition: transform $appear-time / 2  ease-in;
+  }
+
+  &__top {
+    transform: translateY(-100vh);
+  }
+
+  &__bottom {
+    transform: translateY(100vh);
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $color-dance-section;
+
+    &--playing {
+      @include disco-ball($disco-ball-rhythm-time);
+
+      #{$root}__run {
+        display: none;
+      }
+
+      #{$root}__rowMain {
+        opacity: 1;
+      }
+
+      #{$root}__top,
+      #{$root}__bottom {
+        transform: translateY(0);
+      }
+    }
   }
 }

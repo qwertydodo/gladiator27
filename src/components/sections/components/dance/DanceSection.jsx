@@ -1,9 +1,10 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useState} from 'react';
 import './DanceSection.scss';
 import {SectionItem} from "../../SectionItem";
 import {AppContext} from "../../../../AppContext";
+import * as classnames from "classnames";
 import {DanceVideoItem} from "./DanceVideoItem";
-import {DANCE_IMAGES_URLS} from "../../../../constants/imagesUrls";
+import {DANCE_IMAGES_URLS, HEAD_IMAGE_URL} from "../../../../constants/imagesUrls";
 
 export const DanceSection = props => {
   const { danceSong } = useContext(AppContext);
@@ -14,21 +15,62 @@ export const DanceSection = props => {
     setIsPlaying(true);
   }, [danceSong]);
 
-  return <SectionItem className="DanceSection">
-    <div className="DanceSection__dances">
-      <DanceVideoItem src={DANCE_IMAGES_URLS.pavel} isPlaying={isPlaying}/>
+  useEffect(() => {
+    if (!danceSong) {
+      return;
+    }
 
-      <DanceVideoItem src={DANCE_IMAGES_URLS.igor} isPlaying={isPlaying}/>
-    </div>
+    danceSong.on('end', () => {
+      setIsPlaying(false);
+    });
+  }, [danceSong]);
 
-    <div className="DanceSection__run">
-      <button type="button" onClick={onPartyRun}>Нажми Меня Нежно</button>
-    </div>
+  return <SectionItem className={classnames('DanceSection')}>
+    <div className={classnames('DanceSection__content', {
+      'DanceSection__content--playing': isPlaying,
+    })}>
 
-    <div className="DanceSection__dances">
-      <DanceVideoItem src={DANCE_IMAGES_URLS.alexander} isPlaying={isPlaying}/>
+      <div className="DanceSection__top">
+        <div className="DanceSection__rowAdditional">
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext1} isPlaying={isPlaying}/>
 
-      <DanceVideoItem src={DANCE_IMAGES_URLS.yaroslav} isPlaying={isPlaying}/>
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext2} isPlaying={isPlaying}/>
+
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext3} isPlaying={isPlaying}/>
+        </div>
+
+        <div className="DanceSection__rowFriends">
+          <DanceVideoItem src={DANCE_IMAGES_URLS.pavel} isPlaying={isPlaying}/>
+
+          <DanceVideoItem src={DANCE_IMAGES_URLS.igor} isPlaying={isPlaying}/>
+        </div>
+      </div>
+
+      <div className="DanceSection__rowMain">
+       <div className="DanceSection__text">С Днем</div>
+
+       <img className="DanceSection__head" src={HEAD_IMAGE_URL} alt="Head"/>
+
+        <div className="DanceSection__text">Рождения!</div>
+      </div>
+
+      <div className="DanceSection__bottom">
+        <div className="DanceSection__rowFriends">
+          <DanceVideoItem src={DANCE_IMAGES_URLS.alexander} isPlaying={isPlaying}/>
+
+          <DanceVideoItem src={DANCE_IMAGES_URLS.yaroslav} isPlaying={isPlaying}/>
+        </div>
+
+        <div className="DanceSection__rowAdditional">
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext4} isPlaying={isPlaying}/>
+
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext5} isPlaying={isPlaying}/>
+
+          <DanceVideoItem src={DANCE_IMAGES_URLS.ext6} isPlaying={isPlaying}/>
+        </div>
+      </div>
+
+      <button className="DanceSection__run" type="button" onClick={onPartyRun}>Нажми Меня Нежно</button>
     </div>
   </SectionItem>
 };

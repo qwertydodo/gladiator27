@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import './DanceSection.scss';
+import './DanceVideoItem.scss';
 import ReactFreezeframe from 'react-freezeframe';
 
 export const DanceVideoItem = props => {

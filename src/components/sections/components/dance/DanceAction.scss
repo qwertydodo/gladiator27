@@ -1,0 +1,16 @@
+@import "../../../../styles/variables";
+
+.DanceAction {
+  position: relative;
+  background-color: $color-dance-section;
+
+  &__dances {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .DanceVideoItem, .DanceSection img {
+    width: 200px;
+  }
+}

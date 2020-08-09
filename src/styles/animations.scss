@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin rotation($time) {
   animation: rotation infinite $time linear;
 }
@@ -8,5 +10,34 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@mixin zoom($time) {
+  animation: zoom infinite $time linear;
+}
+
+@keyframes zoom {
+  50% {
+    transform:scale(1.5);
+  }
+}
+
+@mixin disco-ball($time) {
+  animation: disco-ball infinite $time linear;
+}
+
+@keyframes disco-ball {
+  25% {
+    background: $color-2;
+  }
+  50% {
+    background: $color-3;
+  }
+  75% {
+    background: $color-4;
+  }
+  100% {
+    background: $color-5;
   }
 }
