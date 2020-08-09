@@ -25,6 +25,13 @@ export const DanceSection = props => {
     });
   }, [danceSong]);
 
+  useEffect(() => {
+    if (!props.isActive && danceSong) {
+      danceSong.stop();
+      setIsPlaying(false);
+    }
+  }, [danceSong, props.isActive]);
+
   return <SectionItem className={classnames('DanceSection')}>
     <div className={classnames('DanceSection__content', {
       'DanceSection__content--playing': isPlaying,
