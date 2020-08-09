@@ -1,13 +1,15 @@
-import danceSongUrl from '../static/dance/real_dance_song.mp3'
-import cardSongUrl from '../static/gladiator.mp3'
+import DANCE_SONG_URL from '../static/dance/real_dance_song.mp3'
+import CARD_SONG_URL from '../static/gladiator.mp3'
 import {CARD_IMAGE_URL, DANCE_IMAGES_URLS, HEAD_IMAGE_URL} from "../constants/imagesUrls";
 import {loadImages} from "./imageHelpers";
 import {loadSong} from "./songHelper";
 
+const START_DELAY = 10000;
+
 const loaderStab = new Promise(resolve => {
     setTimeout(() => {
         resolve();
-    }, 5000);
+    }, START_DELAY);
 });
 
 const loadAppImages = () => {
@@ -20,10 +22,10 @@ const loadAppImages = () => {
 
 export const initApp = async () => {
     const [danceSong, cardSong] = await Promise.all([
-      loadSong(danceSongUrl),
-      loadSong(cardSongUrl),
+      loadSong(DANCE_SONG_URL),
+      loadSong(CARD_SONG_URL),
       loadAppImages(),
-      //loaderStab,
+      loaderStab,
     ]);
 
     return  {

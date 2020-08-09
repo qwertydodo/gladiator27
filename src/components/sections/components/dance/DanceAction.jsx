@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React from 'react';
 import './DanceAction.scss';
 import {SectionItem} from "../../SectionItem";
 import {DanceVideoItem} from "./DanceVideoItem";

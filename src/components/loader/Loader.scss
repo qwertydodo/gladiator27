@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   transition: transform 1s ease-in ;
@@ -20,6 +21,10 @@
 
   &__logo {
     @include rotation(5s);
-    height: 50vh;
+    height: 30vh;
+  }
+
+  &__text {
+    font-size: $font-size-xl;
   }
 }
