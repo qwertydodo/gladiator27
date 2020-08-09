@@ -1,18 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import './App.scss';
 import {Loader} from "./components/loader/Loader";
 import {initApp} from "./helpers/appHelpers";
 import {SectionsList} from "./components/sections/SectionsList";
-import {AppContext, appContextDefaultValue} from './AppContext';
+import {AppContext} from './AppContext';
 import {Helmet} from "react-helmet";
+import {DANCE_SECTION_INDEX} from "./constants/slides";
 
 function App() {
   const [isInit, setIsInit] = useState(false);
-  const [contextValue, setContextValue] = useState(appContextDefaultValue);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(DANCE_SECTION_INDEX);
+  const [externalData, setExternalData] = useState();
+
+  const onSlideChange = useCallback(index => {
+    setActiveSlideIndex(index);
+  }, []);
+
+  const isActiveSlide = useCallback(slideIndex => slideIndex === activeSlideIndex, [activeSlideIndex]);
+
+  const contextValue = useMemo(() => ({
+    ...externalData,
+    activeSlide: activeSlideIndex,
+    isActiveSlide,
+    onSlideChange,
+  }), [externalData, activeSlideIndex, isActiveSlide, onSlideChange]);
 
   useEffect(() => {
     initApp().then((data) => {
-      setContextValue(data);
+      setExternalData(data);
       setIsInit(true);
     });
   }, []);
