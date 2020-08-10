@@ -4,7 +4,7 @@
 .DanceSection {
   $root: &;
   $appear-time: 2s;
-  $head-zoom-rhythm-time: 1s;
+  $head-zoom-rhythm-time: 1.2s;
   $disco-ball-rhythm-time: 5s;
 
   position: relative;
@@ -51,7 +51,8 @@
     transition: opacity $appear-time ease-in;
 
     #{$root}__head {
-      width: 25vh;
+      width: auto;
+      height: 30vh;
 
       @include zoom($head-zoom-rhythm-time);
     }
