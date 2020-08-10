@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './Loader.scss';
 import * as classnames from "classnames";
 import {loaderComponentClassName} from "./constants/selectors";
@@ -18,17 +18,17 @@ export const Loader = props => {
       return;
     }
 
-    if (props.isHide) {
-      loadingSong.stop();
-    } else {
-      loadingSong.play();
-    }
+    loadingSong.play();
 
   }, [props.isHide, loadingSong]);
 
+  const onTransitionEnd = useCallback(() => {
+    loadingSong.stop();
+  }, [loadingSong]);
+
   return <div className={classnames(loaderComponentClassName, {
     [`${loaderComponentClassName}--hide`]: props.isHide,
-  })}>
+  })} onTransitionEnd={onTransitionEnd}>
     <div className={`${loaderComponentClassName}__text`}>Для полного погружения рекомендуется: </div>
 
     <img src={LOADER_IMAGE_URL} className={`${loaderComponentClassName}__logo`} alt="head"/>

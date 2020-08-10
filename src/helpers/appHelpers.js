@@ -4,12 +4,14 @@ import {CARD_IMAGE_URL, DANCE_IMAGES_URLS, HEAD_IMAGE_URL} from "../constants/im
 import {loadImages} from "./imageHelpers";
 import {loadSong} from "./songHelper";
 
-const START_DELAY = 10000;
+const LOADING_ANIMATION_HIDE_TIME = 1000;
+const LOADING_SONG_TIME = 17000;
+const LOADING_TIME = LOADING_SONG_TIME - LOADING_ANIMATION_HIDE_TIME;
 
 const loaderStab = new Promise(resolve => {
     setTimeout(() => {
         resolve();
-    }, START_DELAY);
+    }, LOADING_TIME);
 });
 
 const loadAppImages = () => {
