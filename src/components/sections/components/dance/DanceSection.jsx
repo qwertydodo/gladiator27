@@ -39,11 +39,11 @@ export const DanceSection = props => {
 
       <div className="DanceSection__top">
         <div className="DanceSection__rowAdditional">
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext1} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext1" src={DANCE_IMAGES_URLS.ext1} isPlaying={isPlaying}/>
 
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext2} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext2" src={DANCE_IMAGES_URLS.ext2} isPlaying={isPlaying}/>
 
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext3} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext3" src={DANCE_IMAGES_URLS.ext3} isPlaying={isPlaying}/>
         </div>
 
         <div className="DanceSection__rowFriends">
@@ -69,11 +69,11 @@ export const DanceSection = props => {
         </div>
 
         <div className="DanceSection__rowAdditional">
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext4} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext4" src={DANCE_IMAGES_URLS.ext4} isPlaying={isPlaying}/>
 
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext5} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext5" src={DANCE_IMAGES_URLS.ext5} isPlaying={isPlaying}/>
 
-          <DanceVideoItem src={DANCE_IMAGES_URLS.ext6} isPlaying={isPlaying}/>
+          <DanceVideoItem className="DanceSection__ext6" src={DANCE_IMAGES_URLS.ext6} isPlaying={isPlaying}/>
         </div>
       </div>
 

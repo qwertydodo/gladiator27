@@ -7,6 +7,17 @@
   $head-zoom-rhythm-time: 1.2s;
   $disco-ball-rhythm-time: 5s;
 
+  @mixin dance-img-size($height: 100%, $has-blur: true) {
+    .DanceVideoItem, img {
+      width: auto !important;
+      height: $height !important;
+
+      @if $has-blur {
+        box-shadow: 0 0 10px $color-4;
+      }
+    }
+  }
+
   position: relative;
 
   &__run {
@@ -22,6 +33,11 @@
   &__text {
     font-size: $font-size-xl;
     @include zoom($head-zoom-rhythm-time);
+
+
+    @media (max-width: 992px) {
+      font-size: $font-size-md;
+    }
   }
 
   &__rowAdditional,
@@ -33,17 +49,12 @@
     width: 100%;
   }
 
-  &__rowAdditional,
-  &__rowMain {
-    .DanceVideoItem, img {
-      width: 15vh;
-    }
+  &__rowAdditional {
+    @include dance-img-size(12vh);
   }
 
   &__rowFriends {
-    .DanceVideoItem, img {
-      width: 20vh;
-    }
+    @include dance-img-size(20vh, false);
   }
 
   &__rowMain {
@@ -55,6 +66,10 @@
       height: 30vh;
 
       @include zoom($head-zoom-rhythm-time);
+
+      @media (max-width: 992px) {
+        height: 20vh;
+      }
     }
   }
 
@@ -79,6 +94,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: $color-dance-section;
+    padding: $gutter-md 0;
 
     &--playing {
       @include disco-ball($disco-ball-rhythm-time);

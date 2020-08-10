@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import './DanceVideoItem.scss';
 import ReactFreezeframe from 'react-freezeframe';
+import * as classnames from "classnames";
 
 export const DanceVideoItem = props => {
   const [ref, setRef] = useState();
@@ -28,7 +29,7 @@ export const DanceVideoItem = props => {
     overlay: false
   }), []);
 
-  return <div className="DanceVideoItem">
+  return <div className={classnames('DanceVideoItem', props.className)}>
     <ReactFreezeframe ref={onRefChange} src={props.src} options={options} />
   </div>
 };
