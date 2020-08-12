@@ -1,22 +1,12 @@
 @import "../../../../styles/variables";
 @import "../../../../styles/animations";
+@import "../../../video-item/styles/video-item";
 
 .DanceSection {
   $root: &;
   $appear-time: 2s;
   $head-zoom-rhythm-time: 1.2s;
   $disco-ball-rhythm-time: 5s;
-
-  @mixin dance-img-size($height: 100%, $has-blur: true) {
-    .DanceVideoItem, img {
-      width: auto !important;
-      height: $height !important;
-
-      @if $has-blur {
-        box-shadow: 0 0 10px $color-4;
-      }
-    }
-  }
 
   position: relative;
 
@@ -50,11 +40,11 @@
   }
 
   &__rowAdditional {
-    @include dance-img-size(12vh);
+    @include video-item-size(12vh);
   }
 
   &__rowFriends {
-    @include dance-img-size(20vh, false);
+    @include video-item-size(20vh, false);
   }
 
   &__rowMain {

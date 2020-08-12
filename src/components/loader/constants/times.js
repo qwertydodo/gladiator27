@@ -1,0 +1,1 @@
+export const LOADING_SONG_TIME = 17000;
