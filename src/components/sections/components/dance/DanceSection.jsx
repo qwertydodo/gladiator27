@@ -67,7 +67,7 @@ export const DanceSection = props => {
 
        <img className="DanceSection__head" src={HEAD_IMAGE_URL} alt="Head"/>
 
-        <div className="DanceSection__text">Рождения!</div>
+       <div className="DanceSection__text">Рождения!</div>
       </div>
 
       <div className="DanceSection__bottom">
