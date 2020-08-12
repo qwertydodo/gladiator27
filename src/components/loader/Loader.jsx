@@ -66,7 +66,7 @@ export const Loader = props => {
     />
 
     <div className={`${loaderComponentClassName}__text`}>
-      1. Включить звук
+      1. Разрешить звук
       <br/>
       2. Кликнуть по лысине
       <br/>

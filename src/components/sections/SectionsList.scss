@@ -1,3 +1,9 @@
-#fp-nav.fp-right {
+@import "../../styles/variables";
+
+#fp-nav {
   right: 0 !important;
+
+  ul li a span {
+    background: $color-6 !important;
+  }
 }
