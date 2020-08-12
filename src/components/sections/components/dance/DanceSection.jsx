@@ -5,10 +5,14 @@ import {AppContext} from "../../../../AppContext";
 import * as classnames from "classnames";
 import {DanceVideoItem} from "./DanceVideoItem";
 import {DANCE_IMAGES_URLS, HEAD_IMAGE_URL} from "../../../../constants/imagesUrls";
+import {useWindowSize} from "react-use";
+import ReactConfetti from "react-confetti";
 
 export const DanceSection = props => {
   const { danceSong } = useContext(AppContext);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const { width, height } = useWindowSize();
 
   const onPartyRun = useCallback(() => {
     danceSong.play();
@@ -36,6 +40,11 @@ export const DanceSection = props => {
     <div className={classnames('DanceSection__content', {
       'DanceSection__content--playing': isPlaying,
     })}>
+      {isPlaying && <ReactConfetti
+        width={width}
+        height={height}
+        numberOfPieces={500}
+      />}
 
       <div className="DanceSection__top">
         <div className="DanceSection__rowAdditional">

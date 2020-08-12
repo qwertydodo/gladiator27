@@ -19,8 +19,7 @@ export const Loader = props => {
     }
 
     loadingSong.play();
-
-  }, [props.isHide, loadingSong]);
+  }, [loadingSong]);
 
   const onTransitionEnd = useCallback(() => {
     loadingSong.stop();
