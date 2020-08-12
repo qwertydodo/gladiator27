@@ -1,5 +1,6 @@
 @import "../../styles/animations";
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .Loader {
   position: fixed;
@@ -25,6 +26,13 @@
   }
 
   &__text {
-    font-size: $font-size-xl;
+    @include text-size();
+
+    display: flex;
+    justify-content: center;
+
+    &--centered {
+      text-align: center;
+    }
   }
 }

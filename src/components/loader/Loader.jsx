@@ -28,7 +28,7 @@ export const Loader = props => {
   return <div className={classnames(loaderComponentClassName, {
     [`${loaderComponentClassName}--hide`]: props.isHide,
   })} onTransitionEnd={onTransitionEnd}>
-    <div className={`${loaderComponentClassName}__text`}>Для полного погружения рекомендуется: </div>
+    <div className={classnames(`${loaderComponentClassName}__text`, `${loaderComponentClassName}__text--centered`)}>Для полного погружения рекомендуется: </div>
 
     <img src={LOADER_IMAGE_URL} className={`${loaderComponentClassName}__logo`} alt="head"/>
 

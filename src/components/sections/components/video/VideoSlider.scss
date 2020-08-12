@@ -2,6 +2,8 @@
 @import "../../../../styles/variables";
 
 .VideoSlider {
+  $arrow-gutter: $gutter-lg;
+
   --organic-arrow-color: #{$color-video-section--slider};
   --organic-arrow-thickness: 20px;
   --organic-arrow-height: 80px;
@@ -16,5 +18,17 @@
 
   .awssld__timer {
     background-color: $color-video-section--slider;
+  }
+
+  .awssld__controls {
+    visibility: visible;
+  }
+
+  .awssld__next {
+    right: $arrow-gutter;
+  }
+
+  .awssld__prev {
+    left: $arrow-gutter;
   }
 }
