@@ -46,6 +46,16 @@ export const DanceSection = props => {
         numberOfPieces={500}
       />}
 
+      <div className="DanceSection__fly">
+        <div className="DanceSection__flyLeft">
+          <img src={DANCE_IMAGES_URLS.cat} alt="cat"/>
+        </div>
+
+        <div className="DanceSection__flyRight">
+          <img src={DANCE_IMAGES_URLS.cat} alt="cat"/>
+        </div>
+      </div>
+
       <div className="DanceSection__top">
         <div className="DanceSection__rowAdditional">
           <VideoItem className="DanceSection__ext1" src={DANCE_IMAGES_URLS.ext1} isPlaying={isPlaying}/>
