@@ -62,7 +62,7 @@ export const DanceSection = props => {
 
           <VideoItem className="DanceSection__ext2" src={DANCE_IMAGES_URLS.ext2} isPlaying={isPlaying}/>
 
-          <VideoItem className="DanceSection__ext3" src={DANCE_IMAGES_URLS.ext3} isPlaying={isPlaying}/>
+          <VideoItem className="DanceSection__ext4" src={DANCE_IMAGES_URLS.ext4} isPlaying={isPlaying}/>
         </div>
 
         <div className="DanceSection__rowFriends">
@@ -88,7 +88,7 @@ export const DanceSection = props => {
         </div>
 
         <div className="DanceSection__rowAdditional">
-          <VideoItem className="DanceSection__ext4" src={DANCE_IMAGES_URLS.ext4} isPlaying={isPlaying}/>
+          <VideoItem className="DanceSection__ext3" src={DANCE_IMAGES_URLS.ext3} isPlaying={isPlaying}/>
 
           <VideoItem className="DanceSection__ext5" src={DANCE_IMAGES_URLS.ext5} isPlaying={isPlaying}/>
 

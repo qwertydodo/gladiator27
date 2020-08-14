@@ -6,8 +6,8 @@ import {SectionsList} from "./components/sections/SectionsList";
 import {AppContext} from './AppContext';
 
 function App() {
-  const [isIniting, setIsIniting] = useState(true);
-  const [isInited, setIsInited] = useState(true);
+  const [isIniting, setIsIniting] = useState(false);
+  const [isInited, setIsInited] = useState(false);
   const [externalData, setExternalData] = useState();
 
   const contextValue = useMemo(() => ({

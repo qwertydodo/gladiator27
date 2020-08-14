@@ -30,7 +30,7 @@
   }
 
   &__logo {
-    @include video-item-size(30vh);
+    @include video-item-size(30vh, transparent);
   }
 
   &__text {
