@@ -1,3 +1,13 @@
+@import "./variables";
+
 @mixin blur($color) {
   box-shadow: 0 0 10px $color;
+}
+
+@mixin text-size {
+  font-size: $font-size-xl;
+
+  @media (max-width: 992px) {
+    font-size: $font-size-md;
+  }
 }

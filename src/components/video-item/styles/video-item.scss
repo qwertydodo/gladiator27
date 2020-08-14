@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+@mixin video-item-size($height: 100%, $has-blur: true) {
+  .VideoItem, img {
+    width: auto !important;
+    height: $height !important;
+
+    @if $has-blur {
+      box-shadow: 0 0 10px $color-4;
+    }
+  }
+}

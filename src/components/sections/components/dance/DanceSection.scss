@@ -1,12 +1,15 @@
 @import "../../../../styles/variables";
 @import "../../../../styles/animations";
 @import "../../../../styles/mixins";
+@import "../../../video-item/styles/video-item";
 
 .DanceSection {
   $root: &;
   $appear-time: 2s;
   $head-zoom-rhythm-time: 1.2s;
   $disco-ball-rhythm-time: 5s;
+  $fly-time: 8s;
+  $fly-gutter: 30vh;
 
   @mixin dance-img-size($color, $height: 100%) {
     .DanceVideoItem, img {
@@ -49,11 +52,11 @@
   }
 
   &__rowAdditional {
-    @include dance-img-size($color-4, 12vh);
+    @include video-item-size(12vh, $color-4);
   }
 
   &__rowFriends {
-    @include dance-img-size($color-6, 20vh);
+    @include video-item-size(20vh, $color-6);
   }
 
   &__rowMain {
@@ -86,6 +89,33 @@
     transform: translateY(100vh);
   }
 
+
+  &__fly {
+    height: 100vh;
+    display: none;
+  }
+
+  &__flyLeft,
+  &__flyRight {
+    img {
+      height: 10vh;
+    }
+  }
+
+  &__flyLeft {
+    @include fly-left($fly-time);
+    top: $fly-gutter;
+  }
+
+  &__flyRight {
+    @include fly-right($fly-time);
+    bottom: $fly-gutter;
+
+    img {
+      transform: scaleX(-1);
+    }
+  }
+
   &__content {
     height: 100vh;
     display: flex;
@@ -109,6 +139,10 @@
       #{$root}__top,
       #{$root}__bottom {
         transform: translateY(0);
+      }
+
+      #{$root}__fly {
+        display: block;
       }
     }
   }

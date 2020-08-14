@@ -41,3 +41,34 @@
     background: $color-5;
   }
 }
+
+
+@mixin fly-left($time) {
+  position: absolute;
+  left: 0;
+  animation: fly-left infinite $time linear;
+}
+
+@keyframes fly-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@mixin fly-right($time) {
+  position: absolute;
+  left: 0;
+  animation: fly-right infinite $time linear;
+}
+
+@keyframes fly-right {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

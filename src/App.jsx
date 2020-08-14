@@ -1,36 +1,39 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import './App.scss';
 import {Loader} from "./components/loader/Loader";
 import {initApp} from "./helpers/appHelpers";
 import {SectionsList} from "./components/sections/SectionsList";
 import {AppContext} from './AppContext';
-import {Helmet} from "react-helmet";
 
 function App() {
-  const [isInit, setIsInit] = useState(false);
+  const [isIniting, setIsIniting] = useState(true);
+  const [isInited, setIsInited] = useState(true);
   const [externalData, setExternalData] = useState();
 
   const contextValue = useMemo(() => ({
     ...externalData,
   }), [externalData]);
 
+  const onStart = useCallback(() => {
+    setIsIniting(true);
+  }, []);
+
+  const onEnd = useCallback(() => {
+    setIsInited(true);
+  }, []);
+
   useEffect(() => {
     initApp().then((data) => {
       setExternalData(data);
-      setIsInit(true);
     });
   }, []);
 
+  useEffect(() => {}, []);
+
   return (
     <AppContext.Provider value={contextValue}>
-      <Helmet>
-        <title>Гладиатор 27</title>
-        <meta name="description" content="Игорь Гладиатор 27 День Рождение Поздравление Открытка Представление Красавчик Друзья Любить"/>
-        <link rel="canonical" href="https://gladiator27.herokuapp.com/" />
-      </Helmet>
-
       <div className="App">
-        <Loader isHide={isInit} />
+        <Loader isHide={isInited} isLoading={isIniting} onStart={onStart} onEnd={onEnd}/>
 
         <SectionsList />
       </div>

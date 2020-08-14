@@ -1,7 +1,7 @@
 import React from 'react';
 import './DanceAction.scss';
 import {SectionItem} from "../../SectionItem";
-import {DanceVideoItem} from "./DanceVideoItem";
+import {VideoItem} from "../../../video-item/VideoItem";
 import {DANCE_IMAGES_URLS} from "../../../../constants/imagesUrls";
 import * as classnames from "classnames";
 
@@ -12,15 +12,15 @@ export const DanceAction = props => {
     'DanceAction--playing': isPlaying,
   })}>
       <div className="DanceSection__dances">
-        <DanceVideoItem src={DANCE_IMAGES_URLS.pavel} isPlaying={isPlaying}/>
+        <VideoItem src={DANCE_IMAGES_URLS.pavel} isPlaying={isPlaying}/>
 
-        <DanceVideoItem src={DANCE_IMAGES_URLS.igor} isPlaying={isPlaying}/>
+        <VideoItem src={DANCE_IMAGES_URLS.igor} isPlaying={isPlaying}/>
       </div>
 
       <div className="DanceSection__dances">
-        <DanceVideoItem src={DANCE_IMAGES_URLS.alexander} isPlaying={isPlaying}/>
+        <VideoItem src={DANCE_IMAGES_URLS.alexander} isPlaying={isPlaying}/>
 
-        <DanceVideoItem src={DANCE_IMAGES_URLS.yaroslav} isPlaying={isPlaying}/>
+        <VideoItem src={DANCE_IMAGES_URLS.yaroslav} isPlaying={isPlaying}/>
       </div>
   </SectionItem>
 };

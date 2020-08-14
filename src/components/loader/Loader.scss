@@ -1,7 +1,11 @@
 @import "../../styles/animations";
 @import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../video-item/styles/video-item";
 
 .Loader {
+  $root: &;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -19,12 +23,24 @@
     transform: translateY(-100vh);
   }
 
+  &--loading {
+    #{$root}__logo {
+      @include rotation(5s);
+    }
+  }
+
   &__logo {
-    @include rotation(5s);
-    height: 30vh;
+    @include video-item-size(30vh);
   }
 
   &__text {
-    font-size: $font-size-xl;
+    @include text-size();
+
+    display: flex;
+    justify-content: center;
+
+    &--centered {
+      text-align: center;
+    }
   }
 }

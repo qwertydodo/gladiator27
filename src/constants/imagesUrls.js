@@ -8,6 +8,7 @@ import ext3 from '../static/dance/ext_3.gif';
 import ext4 from '../static/dance/ext_4.gif';
 import ext5 from '../static/dance/ext_5.gif';
 import ext6 from '../static/dance/ext_6.gif';
+import cat from '../static/dance/cat.gif';
 import loader from '../static/loader.gif';
 import card from '../static/card.png';
 import head from '../static/head.png';
@@ -23,6 +24,7 @@ export const DANCE_IMAGES_URLS = {
   ext4,
   ext5,
   ext6,
+  cat,
 };
 
 export const LOADER_IMAGE_URL = loader;
