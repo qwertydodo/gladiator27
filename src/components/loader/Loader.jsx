@@ -51,13 +51,6 @@ export const Loader = props => {
       Для полного погружения рекомендуется:
     </div>
 
-{/*    <img
-      src={LOADER_IMAGE_URL}
-      className={`${loaderComponentClassName}__logo`}
-      alt="head"
-      onClick={onHeadClick}
-    />*/}
-
     <VideoItem
       className={`${loaderComponentClassName}__logo`}
       src={LOADER_IMAGE_URL}

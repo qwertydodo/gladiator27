@@ -31,6 +31,10 @@
 
   &__logo {
     @include video-item-size(30vh, transparent);
+
+    &:hover {
+      cursor: crosshair;
+    }
   }
 
   &__text {
