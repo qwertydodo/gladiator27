@@ -1,5 +1,6 @@
 @import "../../../../styles/variables";
 @import "../../../../styles/animations";
+@import "../../../../styles/mixins";
 
 .DanceSection {
   $root: &;
@@ -7,14 +8,12 @@
   $head-zoom-rhythm-time: 1.2s;
   $disco-ball-rhythm-time: 5s;
 
-  @mixin dance-img-size($height: 100%, $has-blur: true) {
+  @mixin dance-img-size($color, $height: 100%) {
     .DanceVideoItem, img {
       width: auto !important;
       height: $height !important;
 
-      @if $has-blur {
-        box-shadow: 0 0 10px $color-4;
-      }
+      @include blur($color);
     }
   }
 
@@ -50,11 +49,11 @@
   }
 
   &__rowAdditional {
-    @include dance-img-size(12vh);
+    @include dance-img-size($color-4, 12vh);
   }
 
   &__rowFriends {
-    @include dance-img-size(20vh, false);
+    @include dance-img-size($color-6, 20vh);
   }
 
   &__rowMain {
